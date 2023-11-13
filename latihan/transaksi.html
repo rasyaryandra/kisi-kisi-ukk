@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/transaksi.css">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        background-color: #F3F1F1;
+    }
+
+    * {
+        font-family: calibri;
+        color: #000;
+        font-family: sans-serif;
+        text-decoration: none;
+    }
+
+    .nav {
+        border-radius: 10px;
+        background-color: #C4C4C4;
+        margin: 30px;
+        padding: 20px;
+    }
+
+    .nav__item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav__item a:last-child {
+        margin-right: 20px;
+    }
+
+    .nav__item--1 {
+        margin-left: 50px;
+    }
+
+    .nav__item--2 {
+        margin-left: 70px;
+    }
+
+    .nav__item--3 {
+        margin-right: 25px;
+    }
+
+    main {
+        background-color: #C4C4C4;
+        border-radius: 5px;
+        margin: 30px;
+        height: 410px;
+    }
+
+    .main__body {
+        margin-top: 2%;
+        margin-left: 5%;
+        margin-right: 5%;
+        height: 400px;
+    }
+
+    .main__body input {
+        margin-top: 2%;
+    }
+
+    .transactionNumber {
+        width: 25%;
+        height: 40px;
+        border: 0px;
+        border-radius: 5px;
+        margin-left: 100px;
+    }
+
+    .transactionDate {
+        width: 25%;
+        height: 40px;
+        border: 0px;
+        border-radius: 5px;
+        margin-left: 61px;
+    }
+
+    .customerName {
+        width: 25%;
+        height: 40px;
+        border: 0px;
+        border-radius: 5px;
+        margin-left: 77px;
+    }
+
+    .selectedPackage {
+        width: 25%;
+        height: 40px;
+        border: 0px;
+        border-radius: 5px;
+        margin-left: 100px;
+    }
+
+    .packagePrice {
+        width: 25%;
+        height: 40px;
+        border: 0px;
+        border-radius: 5px;
+        margin-left: 106px;
+    }
+
+    .float-right {
+        width: max-content;
+        margin-right: 40%;
+        display: flex;
+        position: relative;
+        left: 110vh;
+        bottom: 28vh;
+        flex-direction: column;
+    }
+
+    .button-1 {
+        width: 15%;
+        position: relative;
+        border-radius: 5px;
+        border: 0px;
+        bottom: 12vh;
+        height: 50px;
+        margin-left: 65%;
+    }
+
+    .main__out label {
+        margin-left: 5%;
+    }
+
+    .totalPrice {
+        width: 25%;
+        height: 40px;
+        border: 0px;
+        border-radius: 5px;
+        margin-left: 105px;
+    }
+
+    .Payment {
+        width: 31%;
+        height: 40px;
+        border: 0px;
+        border-radius: 5px;
+        margin-left: 95px;
+        margin-top: 20px;
+    }
+
+    .btn {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .button-2 {
+        width: 15%;
+        border-radius: 10px;
+        border: 0px;
+        bottom: 12vh;
+        height: 50px;
+        margin-top: 30px;
+        margin-left: 59vh;
+        background-color: white;
+    }
+
+    .button-3 {
+        width: 15%;
+        background-color: white;
+        border-radius: 10px;
+        border: 0px;
+        height: 50px;
+        margin-top: 30px;
+        margin-left: 66vh;
+    }
+
+    .out__float-right {
+        align-items: center;
+        display: flex;
+        float: right;
+        position: relative;
+        bottom: 122px;
+        right: 25vh;
+    }
+
+    .out__float-right input {
+        width: 100%;
+        border: 0px;
+        border-radius: 5px;
+        height: 40px;
+        margin-left: 50px;
+    }
+
+    .popup {
+        width: 25%;
+        height: 50%;
+        background: #dadada;
+        border-radius: 5px;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.1);
+        padding: 0 30px 30px;
+        visibility: hidden;
+        transition: transform 0.4s, top 0.4s;
+    }
+
+    .open-popup {
+        visibility: visible;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .popup p {
+        margin-top: 20%;
+        font-size: 24px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .popup button {
+        background-color: white;
+        width: 30%;
+        height: 12%;
+        margin-top: 25%;
+        border-radius: 10px;
+        border: none;
+    }
+
+    footer {
+        border-radius: 5px;
+        background-color: #C4C4C4;
+        margin: 30px;
+        padding: 16px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <nav class="nav">
+        <!-- menu -->
+        <section class="nav__item">
+            <section class="">
+                <a href="landing.html" class="nav__item--1">Home</a>
+                <a href="transaksi.html" class="nav__item--2">Transaksi</a>
+            </section>
+            <section>
+                <a href="login.html" class="nav__item--3">Logout</a>
+            </section>
+        </section>
+    </nav>
+
+    <main class="main">
+        <section class="main__body">
+            <section>
+                <label for="transactionNumber">No Transaksi</label>
+                <input type="text" class="transactionNumber">
+            </section>
+
+            <section>
+                <label for="transactionDate">Tanggal Transaksi</label>
+                <input type="date" class="transactionDate">
+            </section>
+            <section>
+                <label for="customerName">Nama Customer</label>
+                <input type="text" class="customerName">
+            </section>
+            <section>
+                <label for="selectedPackage">Pilihan Paket</label>
+                <input type="text" class="selectedPackage">
+            </section>
+            <section>
+                <label for="packagePrice">Harga Paket</label>
+                <input type="text" class="packagePrice">
+            </section>
+            <section class="float-right">
+                <label><input type="radio" name="additionalPackage">Tidak ada Tambahan - Rp.0</label>
+                <label><input type="radio" name="additionalPackage">Wax - Rp 10.000</label>
+                <label><input type="radio" name="additionalPackage">Fogging - Rp. 20.000</label>
+            </section>
+            <section>
+                <button class="button-1">Hitung Total Harga</button>
+            </section>
+        </section>
+    </main>
+
+    <section class="main__out">
+        <section>
+            <label for="totalPrice">Total Harga</label>
+            <input type="text" class="totalPrice">
+        </section>
+        <section>
+            <label for="Payment">Pembayaran</label>
+            <input type="text" class="Payment">
+            <section class="btn">
+                <button class="button-2">Hitung Kembalian</button>
+                <button class="button-3" onclick="openPopup()">Simpan Transaksi</button>
+            </section>
+            <section class="popup" id="popup">
+                <p>Transaksi Berhasil <br> Kembali Ke Home</p>
+                <button type="button" onclick="closePopup()">OK</button>
+            </section>
+        </section>
+        <section class="out__float-right">
+            <label for="transactionChange">Kembalian</label>
+            <input type="text" class="return">
+        </section>
+    </section>
+
+    <footer class="footer">
+        <p>@copyright namapeserta</p>
+    </footer>
+
+    <script>
+        let popup = document.getElementById("popup");
+
+        function openPopup() {
+            popup.classList.add("open-popup");
+        }
+        function closePopup() {
+            popup.classList.remove("open-popup");
+        }
+    </script>
+</body>
+
+</html>
